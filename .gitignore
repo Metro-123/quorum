@@ -1,0 +1,6 @@
+/target
+**/*.rs.bk
+*.pdb
+/data
+node_modules/
+.vercel

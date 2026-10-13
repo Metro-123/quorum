@@ -1,0 +1,29 @@
+[package]
+name = "quorum-ui"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[[bin]]
+name = "quorum-ui"
+path = "src/main.rs"
+
+[dependencies]
+# Native egui with eframe (winit + glow)
+eframe = { version = "0.29", default-features = false, features = ["glow", "accesskit", "persistence", "default_fonts"] }
+
+# Our quorum crates
+quorum-proto = { path = "../quorum-proto" }
+quorum-types = { path = "../quorum-types", features = ["serde"] }
+
+# Async runtime
+tokio = { version = "1.40", features = ["full"] }
+
+# Serialization for settings
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Config
+dirs = "5.0"
+chrono = { version = "0.4", features = ["serde"] }
+anyhow = "1.0"

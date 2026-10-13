@@ -1,0 +1,18 @@
+[package]
+name = "quorum-node"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+name = "quorum_node"
+path = "src/lib.rs"
+
+[[bin]]
+name = "quorumd"
+path = "src/main.rs"
+
+[dependencies]
+quorum-types = { path = "../quorum-types" }
+quorum-proto = { path = "../quorum-proto" }
+quorum-exec = { path = "../quorum-exec" }

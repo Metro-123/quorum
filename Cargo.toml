@@ -1,0 +1,23 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/quorum-types",
+    "crates/quorum-sql",
+    "crates/quorum-storage",
+    "crates/quorum-planner",
+    "crates/quorum-exec",
+    "crates/quorum-raft",
+    "crates/quorum-proto",
+    "crates/quorum-node",
+    "crates/quorum-cli",
+    "crates/quorum-ui",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+# The nine core crates are built with ZERO external dependencies on purpose:
+# every layer (codec, WAL, consensus, parser) is written from scratch.
+# The optional desktop client (quorum-ui) is the only crate with dependencies.

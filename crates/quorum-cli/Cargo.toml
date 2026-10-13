@@ -1,0 +1,13 @@
+[package]
+name = "quorum-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "quorum"
+path = "src/main.rs"
+
+[dependencies]
+quorum-types = { path = "../quorum-types" }
+quorum-proto = { path = "../quorum-proto" }
